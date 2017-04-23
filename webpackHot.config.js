@@ -35,10 +35,19 @@ module.exports = {
   devServer:{
       compress: true,
       hot: true,
-      port: 9000
+      contentBase:__dirname + '/dist',//指定服务指向的目录
+      port: 9000,
+      proxy:{
+          "/api": {
+            target: "http://localhost:3000",
+            pathRewrite: {"^/api" : ""}
+          }
+      },
+      watchContentBase:true,
   },
+
   plugins:[
        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NamedModulesPlugin(),
+       new webpack.NamedModulesPlugin(),
   ]
 }

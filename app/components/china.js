@@ -4,7 +4,17 @@
 import React from 'react';
 import  './china.css';
 
+function testProxy(){
+        $.get('/api/getUser',{id:1},function(res,status,xhr){
+            console.log(res);
+        });
+        $.get('http://localhost:3000/getUser',{id:1},function(res,status,xhr){
+            console.log(res);
+        });
+}
+
 export default function(){
     console.log('load China!!!');
-    return <div className = 'china'>hello china!!!!!111111aaaasssss</div>;
+    testProxy();
+    return <div className = 'china'>hello china</div>;
 }
