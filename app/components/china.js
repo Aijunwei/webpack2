@@ -16,5 +16,5 @@ function testProxy(){
 export default function(){
     console.log('load China!!!');
     testProxy();
-    return <div className = 'china'>hello china</div>;
+    return <div className = 'china'>hello china!!</div>;
 }

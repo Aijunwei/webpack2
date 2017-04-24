@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 module.exports = {
+    devtool:'eval',
     entry: [
         'react-hot-loader/patch',
         // activate HMR for React
@@ -45,9 +46,18 @@ module.exports = {
       },
       watchContentBase:true,
   },
+  resolve:{
+      extensions: [".js", ".json", ".jsx", ".css"]
+  },
 
+  externals: {
+      jquery: 'jQuery'
+  },
+  performance: {
+      hints: "warning"
+  },
   plugins:[
        new webpack.HotModuleReplacementPlugin(),
-       new webpack.NamedModulesPlugin(),
+       new webpack.NamedModulesPlugin()
   ]
 }

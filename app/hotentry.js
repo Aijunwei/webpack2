@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import China from './components/china.js';
+import China from './components/china';
 import { AppContainer } from 'react-hot-loader';
+import $ from 'jquery';
 
 const render = (Component) => {
   ReactDOM.render(
