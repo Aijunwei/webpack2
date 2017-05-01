@@ -29,10 +29,10 @@ module.exports = {
           }
       ]
   },
-  devServer:{
-      compress: true,
-      port: 9000
-  },
+  // devServer:{
+  //     compress: true,
+  //     port: 9000
+  // },
   plugins:[
       new ExtractTextPlugin({
           filename:'css/bundle.css',
