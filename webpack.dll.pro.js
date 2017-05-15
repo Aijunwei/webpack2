@@ -1,8 +1,8 @@
 var path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var webpack = require('webpack');
 module.exports = {
-    entry: './app/index.js',
+    entry: './app/dllEnrty.js',
     output: {
       filename: 'js/bundle.js',
       publicPath:'/assets/',
@@ -30,20 +30,15 @@ module.exports = {
           }
       ]
   },
-  externals: {
-      jquery: 'jQuery',
-      react:'React',
-      'react-dom':'ReactDOM'
-  },
-  // devServer:{
-  //     compress: true,
-  //     port: 9000
-  // },
   plugins:[
       new ExtractTextPlugin({
           filename:'css/bundle.css',
           disable:false,
           allChunks:true,
-      })
+      }),
+      new webpack.DllReferencePlugin({
+        context: __dirname,
+        manifest: require('./manifest.json'),
+    }),
   ]
 }

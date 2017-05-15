@@ -11,11 +11,12 @@ module.exports = {
         'webpack/hot/only-dev-server',
         // bundle the client for hot reloading
         // only- means to only hot reload for successful updates
-        './app/hotentry.js'
+        './app/reactrouterIndex.js'
     ],
     output: {
       filename: 'bundle.js',
       publicPath:'/assets/',
+
       path: path.resolve(__dirname, 'dist')
   },
   module:{
@@ -51,9 +52,7 @@ module.exports = {
   },
 
   externals: {
-      jquery: 'jQuery',
-    //   react:'React',
-    //   'react-dom':'ReactDOM'
+      jquery: 'jQuery'
   },
   performance: {
       hints: "warning"

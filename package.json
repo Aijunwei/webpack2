@@ -6,8 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "normaldev": "webpack-dev-server --config webpack.config.js",
-    "hmrdev": "webpack-dev-server  --config webpackHot.config.js",
-    "pro": "webpack -p --config webpack.production.config.js"
+    "hmrdev": "webpack-dev-server   --config webpackHot.config.js",
+    "pro": "webpack -p --profile --colors --config  webpack.production.config.js",
+    "rtdev": "webpack-dev-server  --config webpack.reactrouter.dev.config.js",
+    "dll":"webpack --config dll.config.js",
+    "dllpro":"webpack -p --profile --colors --config  webpack.dll.pro.js"
   },
   "keywords": [
     "webpack"
@@ -16,15 +19,20 @@
   "license": "ISC",
   "dependencies": {
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "bundle-loader": "^0.5.5",
     "jquery": "^3.2.1",
     "moment": "^2.18.1",
     "react": "^15.5.4",
+    "react-addons-css-transition-group": "^15.5.2",
     "react-dom": "^15.5.4",
+    "react-router-dom": "^4.1.1",
     "webpack": "^2.4.1"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^6.4.1",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-preset-env": "^1.4.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",

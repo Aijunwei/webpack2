@@ -2,7 +2,9 @@
 //     console.log('hello China!');
 // }
 import React from 'react';
-import  './china.css';
+import $ from 'jquery';
+//import  style from './china.css';
+import './china.css';
 
 function testProxy(){
         $.get('/api/getUser',{id:1},function(res,status,xhr){
@@ -36,5 +38,6 @@ function determineDate2() {
 export default function(){
     console.log('load China!!!');
     testProxy();
-    return <div className = 'china' onClick = {determineDate2}>hello china!!</div>;
+    return <div className = 'china' onClick = {determineDate}>hello china!!!</div>;
+    //return <div className = {style.china} onClick = {determineDate}>hello china!!</div>;
 }

@@ -17,6 +17,16 @@ module.exports = {
               options:{
                   presets:['es2015','react']
               }
+          },{
+              test:/\.css$/,
+              use:[{
+                  loader: 'style-loader'
+              },{
+                  loader: 'css-loader',
+                //   options:{
+                //       modules:true
+                //   }/*开启css-modules*/
+              }]
           }
       ]
   },
