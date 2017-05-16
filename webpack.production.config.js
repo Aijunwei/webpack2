@@ -6,7 +6,7 @@ module.exports = {
     output: {
       filename: 'js/bundle.js',
       publicPath:'/assets/',
-      //chunkFilename:'js/[id].js',
+      chunkFilename:'js/[id].js',
       //publicPath:'',
       path: path.resolve(__dirname, 'production')
   },

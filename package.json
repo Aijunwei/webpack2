@@ -10,7 +10,9 @@
     "pro": "webpack -p --profile --colors --config  webpack.production.config.js",
     "rtdev": "webpack-dev-server  --config webpack.reactrouter.dev.config.js",
     "dll":"webpack --config dll.config.js",
-    "dllpro":"webpack -p --profile --colors --config  webpack.dll.pro.js"
+    "dllpro":"webpack -p --profile --colors --config  webpack.dll.pro.js",
+    "analyze":"webpack --json --profile --config webpack.production.config.js > stats.json ",
+    "analyze2":"webpack --json --config webpack.production.config.js > stats.json "
   },
   "keywords": [
     "webpack"
